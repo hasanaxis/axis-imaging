@@ -24,6 +24,13 @@
   .service-section {
     margin-bottom: 80px;
   }
+
+  /* Adjust image container for tablet */
+  .service-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -54,7 +61,7 @@
   }
 
   .service-text h3 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Slightly smaller on mobile */
   }
 
   .service-text p {
@@ -67,6 +74,14 @@
 
   .service-content {
     gap: 30px;
+  }
+
+  /* Mobile image adjustments */
+  .service-image {
+    width: 100%;
+    max-width: 350px; /* Slightly smaller on mobile */
+    height: 260px; /* Maintain aspect ratio */
+    margin: 0 auto;
   }
 
   .services-cta-content h2 {
@@ -82,5 +97,21 @@
   .cta-secondary {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+/* Additional breakpoint for very small screens */
+@media (max-width: 480px) {
+  .service-image {
+    max-width: 300px;
+    height: 225px;
+  }
+
+  .service-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .services-overview-header h2 {
+    font-size: 2rem;
   }
 }

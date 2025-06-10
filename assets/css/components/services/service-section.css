@@ -1,6 +1,6 @@
 /* Service Sections */
 .service-section {
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .service-section:last-child {
@@ -9,9 +9,14 @@
 
 .service-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
   align-items: center;
+}
+
+/* Reverse layout adjustments */
+.service-content.reverse {
+  grid-template-columns: 400px 1fr;
 }
 
 /* Default layout: text left, image right */
@@ -33,28 +38,28 @@
 }
 
 .service-text h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #4a3a8c;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   letter-spacing: -0.01em;
 }
 
 .service-text p {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #555;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .service-learn-more {
   background: transparent;
   color: #4a3a8c;
   border: 2px solid #4a3a8c;
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 10px 20px;
+  border-radius: 6px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: var(--primary-font, "Inter", sans-serif);
@@ -64,28 +69,38 @@
   background: #4a3a8c;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 58, 140, 0.3);
+  box-shadow: 0 4px 15px rgba(74, 58, 140, 0.3);
 }
 
 .service-image {
   position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .service-image img {
   width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
-/* Special styling for images with purple border (like in design) */
-.service-section:nth-child(odd) .service-image::before {
+/* Gradient overlay at bottom of images */
+.service-image::after {
   content: "";
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  background: linear-gradient(135deg, #4a3a8c, #ec008c);
-  border-radius: 25px;
-  z-index: -1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, transparent 0%, rgba(74, 58, 140, 0.8) 100%);
+  border-radius: 0 0 16px 16px;
+  z-index: 1;
+}
+
+/* Remove the purple border/background that was previously applied */
+.service-section:nth-child(odd) .service-image::before {
+  display: none;
 }
