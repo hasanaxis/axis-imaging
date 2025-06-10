@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CT Scan - Axis Imaging</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+
+  <body>
+    <!-- Component Placeholders -->
+    <div id="header-component"></div>
+    <div id="service-hero-component"></div>
+    <div id="footer-component"></div>
+
+    <!-- Loading indicator -->
+    <div
+      id="loading"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(38, 34, 98, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        z-index: 9999;
+        font-family: 'Inter', sans-serif;
+      "
+    >
+      <div style="text-align: center">
+        <div style="margin-bottom: 20px">
+          <div
+            style="
+              width: 40px;
+              height: 40px;
+              border: 4px solid rgba(236, 0, 140, 0.3);
+              border-top: 4px solid #ec008c;
+              border-radius: 50%;
+              animation: spin 1s linear infinite;
+              margin: 0 auto;
+            "
+          ></div>
+        </div>
+        <p>Loading CT Scan Information...</p>
+      </div>
+    </div>
+
+    <style>
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Scripts -->
+    <script type="module">
+      import ComponentLoader from "../assets/js/utils/componentLoader.js";
+
+      // Load components for CT scan service page
+      const loader = new ComponentLoader();
+      const components = [
+        { path: "../components/header.html", target: "#header-component" },
+        { path: "../components/services/ct-scan/ct-scan-hero.html", target: "#service-hero-component" },
+        { path: "../components/services/ct-scan-overview.html", target: "#service-overview-component" },
+        { path: "../components/services/ct-scan-benefits.html", target: "#service-benefits-component" },
+        { path: "../components/services/ct-scan-process.html", target: "#service-process-component" },
+        { path: "../components/services/ct-scan-preparation.html", target: "#service-preparation-component" },
+        { path: "../components/services/ct-scan-faq.html", target: "#service-faq-component" },
+        { path: "../components/booking.html", target: "#booking-component" },
+        { path: "../components/footer.html", target: "#footer-component" },
+      ];
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          await loader.loadComponents(components);
+          document.getElementById("loading").style.display = "none";
+
+          // Import and initialize the modular app
+          await import("../assets/js/main.js");
+        } catch (error) {
+          console.error("❌ Failed to load CT scan page:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
