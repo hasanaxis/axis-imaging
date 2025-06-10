@@ -1,0 +1,33 @@
+/* Services Hero Section */
+.services-hero {
+  background: linear-gradient(180deg, var(--axis-royal-blue) 0%, #7f268a 100%),
+    url("../images/services/services-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.services-hero-content {
+  color: white;
+  max-width: 600px;
+}
+
+.services-hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services - Axis Imaging</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/services.css" />
+  </head>
+
+  <body>
+    <!-- Reused Components -->
+    <div id="header-component"></div>
+
+    <!-- Services Specific Components -->
+    <div id="services-hero-component"></div>
+    <div id="services-overview-component"></div>
+    <div id="service-detail-component"></div>
+    <div id="services-cta-component"></div>
+
+    <!-- Reused Components -->
+    <div id="footer-component"></div>
+
+    <!-- Loading indicator -->
+    <div
+      id="loading"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(38, 34, 98, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        z-index: 9999;
+        font-family: 'Inter', sans-serif;
+      "
+    >
+      <div style="text-align: center">
+        <div style="margin-bottom: 20px">
+          <div
+            style="
+              width: 40px;
+              height: 40px;
+              border: 4px solid rgba(236, 0, 140, 0.3);
+              border-top: 4px solid #ec008c;
+              border-radius: 50%;
+              animation: spin 1s linear infinite;
+              margin: 0 auto;
+            "
+          ></div>
+        </div>
+        <p>Loading Services...</p>
+      </div>
+    </div>
+
+    <style>
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Scripts -->
+    <script type="module">
+      import ComponentLoader from "./assets/js/utils/componentLoader.js";
+
+      // Load components
+      const loader = new ComponentLoader();
+      const components = [
+        { path: "components/header.html", target: "#header-component" },
+        {
+          path: "components/services/services-hero.html",
+          target: "#services-hero-component",
+        },
+        {
+          path: "components/services/services-overview.html",
+          target: "#services-overview-component",
+        },
+        {
+          path: "components/cta.html",
+          target: "#services-cta-component",
+        },
+        { path: "components/footer.html", target: "#footer-component" },
+      ];
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          await loader.loadComponents(components);
+          document.getElementById("loading").style.display = "none";
+
+          // Initialize the services app
+          await import("./assets/js/services-main.js");
+        } catch (error) {
+          console.error("❌ Failed to load services page:", error);
+        }
+      });
+    </script>
+  </body>
+</html>

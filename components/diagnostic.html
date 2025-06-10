@@ -1,0 +1,81 @@
+<!-- components/diagnostic.html -->
+<section class="diagnostic-section">
+  <div class="diagnostic-container">
+    <div class="diagnostic-header">
+      <h2>Our Services</h2>
+      <p>My doctor referred me for →</p>
+    </div>
+
+    <div class="diagnostic-grid" id="services-grid">
+      <div class="diagnostic-card service-card focused" data-service="ct-scan">
+        <div class="diagnostic-card-image">
+          <img
+            src="assets/images/services/Frame 16.png"
+            alt="CT Scan procedure"
+          />
+        </div>
+        <div class="diagnostic-card-overlay">
+          <div class="diagnostic-card-content">
+            <h3>CT-Scan</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagnostic-card service-card" data-service="x-ray">
+        <div class="diagnostic-card-image">
+          <img
+            src="assets/images/services/Frame 14.png"
+            alt="X-Ray procedure"
+          />
+        </div>
+        <div class="diagnostic-card-overlay">
+          <div class="diagnostic-card-content">
+            <h3>X-Ray</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagnostic-card service-card" data-service="ultrasound">
+        <div class="diagnostic-card-image">
+          <img
+            src="assets/images/services/Frame 13.png"
+            alt="Ultrasound procedure"
+          />
+        </div>
+        <div class="diagnostic-card-overlay">
+          <div class="diagnostic-card-content">
+            <h3>Ultrasound</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagnostic-card service-card" data-service="dexa">
+        <div class="diagnostic-card-image">
+          <img
+            src="assets/images/services/Frame 15.png"
+            alt="DEXA scan procedure"
+          />
+        </div>
+        <div class="diagnostic-card-overlay">
+          <div class="diagnostic-card-content">
+            <h3>DEXA</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination dots (mobile only) -->
+    <div class="services-pagination" id="services-pagination">
+      <button class="pagination-dot active" data-index="0"></button>
+      <button class="pagination-dot" data-index="1"></button>
+      <button class="pagination-dot" data-index="2"></button>
+      <button class="pagination-dot" data-index="3"></button>
+    </div>
+
+    <!-- Mobile bottom section -->
+    <div class="mobile-services-bottom">
+      <div class="mobile-services-subtitle">Or view all services</div>
+      <button class="diagnostic-btn">View All Services</button>
+    </div>
+  </div>
+</section>

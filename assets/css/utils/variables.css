@@ -1,0 +1,10 @@
+/* CSS Variables */
+:root {
+  --axis-magenta: #ec008c;
+  --axis-light-purple: #b41e8e;
+  --axis-dark-purple: #662d91;
+  --axis-royal-blue: #262262;
+  --axis-charcoal: #3c4247;
+  --axis-grey-mid: #606a70;
+  --primary-font: "Inter", Arial, sans-serif;
+}

@@ -1,0 +1,13 @@
+/* Main CSS file - Import all components and utilities */
+
+/* Import utilities first (variables, reset, animations) */
+@import url("./utils/variables.css");
+@import url("./utils/reset.css");
+@import url("../css/components/services/services-animations.css");
+
+/* Import component styles in logical order */
+@import url("../css/components/services/services-hero.css");
+@import url("../css/components/services/services-overview.css");
+@import url("../css/components/services/service-section.css");
+@import url("../css/components/services/service-cta.css");
+@import url("../css/components/services/services-responsive.css");

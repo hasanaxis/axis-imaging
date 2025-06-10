@@ -1,0 +1,31 @@
+/* Services Overview Section */
+.services-overview {
+  background: #ffffff;
+  padding: 100px 0;
+}
+
+.services-overview-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.services-overview-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.services-overview-header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #4a3a8c;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.services-subtitle {
+  font-size: 1.3rem;
+  color: #ec008c;
+  font-weight: 500;
+  margin: 0;
+}

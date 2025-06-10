@@ -1,0 +1,36 @@
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-content {
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Smooth transitions */
+.hero-content h1,
+.hero-content p,
+.hero-image {
+  transition: opacity 0.3s ease;
+}
+
+/* Smooth entrance animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

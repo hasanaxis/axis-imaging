@@ -1,0 +1,91 @@
+/* Service Sections */
+.service-section {
+  margin-bottom: 120px;
+}
+
+.service-section:last-child {
+  margin-bottom: 0;
+}
+
+.service-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Default layout: text left, image right */
+.service-content .service-text {
+  order: 1;
+}
+
+.service-content .service-image {
+  order: 2;
+}
+
+/* Reverse layout: image left, text right */
+.service-content.reverse .service-text {
+  order: 2;
+}
+
+.service-content.reverse .service-image {
+  order: 1;
+}
+
+.service-text h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #4a3a8c;
+  margin-bottom: 25px;
+  letter-spacing: -0.01em;
+}
+
+.service-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.service-learn-more {
+  background: transparent;
+  color: #4a3a8c;
+  border: 2px solid #4a3a8c;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--primary-font, "Inter", sans-serif);
+}
+
+.service-learn-more:hover {
+  background: #4a3a8c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 58, 140, 0.3);
+}
+
+.service-image {
+  position: relative;
+}
+
+.service-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Special styling for images with purple border (like in design) */
+.service-section:nth-child(odd) .service-image::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(135deg, #4a3a8c, #ec008c);
+  border-radius: 25px;
+  z-index: -1;
+}

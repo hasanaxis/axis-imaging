@@ -1,0 +1,97 @@
+<!-- components/booking.html -->
+<section class="booking-section">
+  <div class="booking-container">
+    <!-- Header -->
+    <div class="booking-header">
+      <div class="booking-subtitle">Simple Booking Process</div>
+      <h2>Here's how it works</h2>
+    </div>
+
+    <!-- Main Content -->
+    <div class="booking-content">
+      <div class="booking-image-section">
+        <div class="booking-image">
+          <img
+            id="step-image"
+            src="assets/images/gallery/Group 8.png"
+            alt="Patient consultation"
+          />
+        </div>
+      </div>
+
+      <div class="booking-text-section">
+        <h3 id="step-title">Get Your Referral</h3>
+        <p id="step-description">
+          Located in the booming Merrifield precinct of Mickleham. The very
+          first Radiology clinic in the suburb.
+        </p>
+        <a href="#" class="booking-btn book-appointment">Book Appointment</a>
+      </div>
+    </div>
+
+    <!-- Process Steps -->
+    <div class="process-steps">
+      <div class="process-step active step-button" data-step="1">
+        <div class="step-number">01</div>
+        <div class="step-title">Get Your Referral</div>
+      </div>
+
+      <div class="process-step step-button" data-step="2">
+        <div class="step-number">02</div>
+        <div class="step-title">Book an Appointment</div>
+      </div>
+
+      <div class="process-step step-button" data-step="3">
+        <div class="step-number">03</div>
+        <div class="step-title">We'll guide you through the rest</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Card Design (Hidden on Desktop) -->
+  <div class="mobile-booking-card">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <div class="mobile-subtitle">Aiming for clinical excellence</div>
+      <h2 class="mobile-title">We're Here to Help</h2>
+    </div>
+
+    <!-- Mobile Image -->
+    <div class="mobile-image-container">
+      <img
+        id="mobile-step-image"
+        src="assets/images/gallery/Group 8.png"
+        alt="Patient consultation"
+        class="mobile-step-image"
+      />
+    </div>
+
+    <!-- Mobile Content -->
+    <div class="mobile-content">
+      <h3 id="mobile-step-title" class="mobile-step-title">
+        Get Your Referral
+      </h3>
+      <p id="mobile-step-description" class="mobile-step-description">
+        Located in the booming Merrifield precinct of Mickleham. The very first
+        Radiology clinic in the suburb.
+      </p>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <button class="nav-arrow step-prev" id="prev-btn">
+        <span>‹</span>
+      </button>
+
+      <div class="pagination-dots">
+        <div class="dot active step-button" data-step="1"></div>
+        <div class="dot step-button" data-step="2"></div>
+        <div class="dot step-button" data-step="3"></div>
+      </div>
+
+      <button class="nav-arrow step-next" id="next-btn">
+        <span>›</span>
+      </button>
+    </div>
+  </div>
+</section>

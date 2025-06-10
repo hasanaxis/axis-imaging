@@ -1,0 +1,342 @@
+/* Header Styles */
+.header {
+  background: white;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+/* Header hidden state when scrolling down */
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+/* Header visible state when scrolling up */
+.header.visible {
+  transform: translateY(0);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+/* Desktop Navigation */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: var(--axis-charcoal, #333);
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-menu li a:hover {
+  color: var(--axis-magenta, #ec008c);
+}
+
+/* Dropdown arrow for Services, About, etc. */
+.nav-menu li a.dropdown::after {
+  content: "▼";
+  font-size: 10px;
+  margin-left: 8px;
+  opacity: 0.6;
+}
+
+/* Right side navigation */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Toggle Container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--axis-charcoal, #666);
+  transition: color 0.3s ease;
+}
+
+.toggle-label.active {
+  color: var(--axis-magenta, #ec008c);
+  font-weight: 600;
+}
+
+/* Modern Toggle Switch */
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  background: var(--axis-magenta, #ec008c);
+  border-radius: 13px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.toggle-switch:hover {
+  box-shadow: 0 0 10px rgba(236, 0, 140, 0.3);
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* When toggled to Referrer mode */
+.toggle-switch.referrer-mode {
+  background: var(--axis-royal-blue, #262262);
+}
+
+.toggle-switch.referrer-mode .toggle-slider {
+  transform: translateX(-24px);
+}
+
+/* Book Appointment Button */
+.book-appointment {
+  background: var(--axis-magenta, #ec008c);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--primary-font, "Inter", sans-serif);
+  white-space: nowrap;
+}
+
+.book-appointment:hover {
+  background: var(--axis-light-purple, #b8006b);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(236, 0, 140, 0.3);
+}
+
+/* Mobile Menu Toggle - Hidden on Desktop */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 4px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger menu animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-menu {
+  list-style: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.mobile-nav-menu li {
+  margin-bottom: 15px;
+}
+
+.mobile-nav-menu a {
+  text-decoration: none;
+  color: var(--axis-charcoal, #333);
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-menu a:hover {
+  color: var(--axis-magenta, #ec008c);
+}
+
+.mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mobile-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Prevent scrolling when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Mobile Header Styling - Axis Royal Blue Background */
+@media (max-width: 768px) {
+  .header {
+    background: #262262; /* Axis Royal Blue */
+    padding: 12px 0;
+    box-shadow: 0 2px 15px rgba(38, 34, 98, 0.3);
+  }
+
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  .logo-img {
+    height: 35px;
+    /* Ensure logo is visible on dark background */
+    filter: brightness(0) invert(1); /* Makes logo white if it's dark */
+  }
+
+  /* Hide desktop navigation */
+  .nav-menu,
+  .nav-right {
+    display: none;
+  }
+
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Adjust mobile menu positioning */
+  .mobile-menu {
+    top: 59px; /* Adjust based on mobile header height */
+  }
+
+  /* Mobile menu toggle spans - white color for dark header */
+  .mobile-menu-toggle span {
+    background: white;
+  }
+
+  /* Mobile header scroll states */
+  .header.hidden {
+    transform: translateY(-100%);
+  }
+
+  .header.visible {
+    transform: translateY(0);
+  }
+
+  /* When mobile menu is open, keep header visible */
+  .header.mobile-menu-open {
+    transform: translateY(0) !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .nav-menu,
+  .nav-right {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Scrolled header state - Desktop */
+@media (min-width: 769px) {
+  .header.scrolled {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Scrolled mobile header - Keep Axis Royal Blue */
+@media (max-width: 768px) {
+  .header.scrolled {
+    background: rgba(38, 34, 98, 0.95); /* Axis Royal Blue with transparency */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(38, 34, 98, 0.4);
+  }
+}

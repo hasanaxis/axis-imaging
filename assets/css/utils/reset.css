@@ -1,0 +1,68 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  line-height: 1.6;
+  color: var(--axis-charcoal);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  /* Prevent elastic scrolling on iOS */
+  position: fixed;
+  width: 100%;
+}
+
+body {
+  position: static;
+  overscroll-behavior-y: none; /* Prevent bounce/elastic scroll */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile Safari specific fixes */
+@media screen and (max-width: 768px) {
+  html {
+    height: -webkit-fill-available;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    /* Prevent rubber band scrolling */
+    overscroll-behavior: none;
+    -webkit-overscroll-behavior: none;
+  }
+
+  /* Prevent pull-to-refresh and overscroll */
+  .main-content {
+    overscroll-behavior-y: contain;
+  }
+}
+
+/* Ensure header is always at the very top */
+.header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  /* Ensure no margin/padding pushes it down */
+  margin: 0;
+  padding: 15px 0;
+}
+
+/* Add proper spacing for fixed header */
+body {
+  padding-top: 0px; /* Adjust based on your header height */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 0px; /* Adjust for mobile header height */
+  }
+}

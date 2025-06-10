@@ -1,0 +1,22 @@
+/* Main CSS file - Import all components and utilities */
+
+/* Import utilities first (variables, reset, animations) */
+@import url("./utils/variables.css");
+@import url("./utils/reset.css");
+@import url("./utils/animations.css");
+
+/* Import component styles in logical order */
+@import url("./components/header.css");
+@import url("./components/hero.css");
+@import url("./components/features.css");
+@import url("./components/help.css");
+@import url("./components/services.css");
+@import url("./components/know.css");
+@import url("./components/booking.css");
+@import url("./components/process.css");
+@import url("./components/faq.css");
+@import url("./components/cta.css");
+@import url("./components/footer.css");
+
+/* Import any additional component files you created */
+@import url("./components/diagnostic.css");
