@@ -18,18 +18,18 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true
+          lfs: false
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_XXX }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PROUD_PLANT_03F185B00 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "/" # Built app content directory - optional
-          skip_app_build: true # Skip the build process
-          ###### End of Repository/Build Configurations ######
+          output_location: "/" # Built app content directory
+          skip_app_build: true # Skip build for static HTML site
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -40,5 +40,5 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_XXX }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PROUD_PLANT_03F185B00 }}
           action: "close"
