@@ -1,7 +1,7 @@
 /* Services Hero Section */
 .services-hero {
   background: linear-gradient(180deg, var(--axis-royal-blue) 0%, #7f268a 100%),
-    url("../images/services/services-hero.png");
+    url("../../../images/services/services-hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
